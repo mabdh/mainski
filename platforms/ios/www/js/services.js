@@ -18,22 +18,6 @@ angular.module('starter.services', [])
   }
 }])
 
-.factory('Picture', function () {
-
-  var data = {
-        URI: ''
-    };
- 
-   return {
-        getURI: function () {
-            return data.URI;
-        },
-        setURI: function (addressURI) {
-            data.URI = addressURI;
-        }
-    };
-})
-
 /**
  * A simple example service that returns some data.
  */

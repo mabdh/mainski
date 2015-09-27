@@ -9,35 +9,37 @@
                 "parents": {
                     "ImageIO.framework": [
                         {
-                            "xml": true,
+                            "xml": "true",
                             "count": 1
                         }
                     ],
                     "CoreLocation.framework": [
                         {
-                            "xml": false,
+                            "xml": "false",
                             "count": 1
                         }
                     ],
                     "CoreGraphics.framework": [
                         {
-                            "xml": false,
-                            "count": 2
+                            "xml": "false",
+                            "count": 1
                         }
                     ],
                     "AssetsLibrary.framework": [
                         {
-                            "xml": false,
-                            "count": 3
-                        }
-                    ],
-                    "MobileCoreServices.framework": [
+                            "xml": "false",
+                            "count": 1
+                        },
                         {
                             "xml": false,
                             "count": 2
                         }
                     ],
-                    "AVFoundation.framework": [
+                    "MobileCoreServices.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        },
                         {
                             "xml": false,
                             "count": 1
@@ -49,19 +51,15 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"Camera\"><param name=\"ios-package\" value=\"CDVCamera\" /></feature>",
-                            "count": 1
-                        },
-                        {
-                            "xml": "<preference name=\"CameraUsesGeolocation\" value=\"false\" />",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"Device\"><param name=\"ios-package\" value=\"CDVDevice\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Camera\"><param name=\"ios-package\" value=\"CDVCamera\" /></feature>",
                             "count": 1
                         },
                         {
@@ -75,20 +73,6 @@
                         {
                             "xml": "<feature name=\"FileTransfer\"><param name=\"ios-package\" value=\"CDVFileTransfer\" /></feature>",
                             "count": 1
-                        },
-                        {
-                            "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
-                            "count": 1
-                        }
-                    ]
-                }
-            },
-            "*-Info.plist": {
-                "parents": {
-                    "NSLocationWhenInUseUsageDescription": [
-                        {
-                            "xml": "<string />",
-                            "count": 1
                         }
                     ]
                 }
@@ -96,24 +80,22 @@
         }
     },
     "installed_plugins": {
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.ionicframework.mainski500903"
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
         },
-        "cordova-plugin-console": {
-            "PACKAGE_NAME": "com.ionicframework.mainski500903"
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
         },
-        "cordova-plugin-device": {
-            "PACKAGE_NAME": "com.ionicframework.mainski500903"
-        },
-        "cordova-plugin-file": {
-            "PACKAGE_NAME": "com.ionicframework.mainski500903"
+        "org.apache.cordova.camera": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
         },
         "cordova-plugin-file-transfer": {
-            "PACKAGE_NAME": "com.ionicframework.mainski500903"
-        },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.ionicframework.mainski500903"
+            "PACKAGE_NAME": "com.ionicframework.starter"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "com.ionicframework.starter"
+        }
+    }
 }

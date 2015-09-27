@@ -114,7 +114,7 @@ static NSString *stripFragment(NSString* url)
     return self;
 }
 
-- (BOOL)request:(NSURLRequest*)newRequest isEqualToRequestAfterStrippingFragments:(NSURLRequest*)originalRequest
+- (BOOL)request:(NSURLRequest*)newRequest isFragmentIdentifierToRequest:(NSURLRequest*)originalRequest
 {
     if (originalRequest.URL && newRequest.URL) {
         NSString* originalRequestUrl = [originalRequest.URL absoluteString];
@@ -193,17 +193,6 @@ static NSString *stripFragment(NSString* url)
     }
 }
 
-- (BOOL)shouldLoadRequest:(NSURLRequest*)request
-{
-    NSString* scheme = [[request URL] scheme];
-
-    if ([scheme isEqualToString:@"mailto"] || [scheme isEqualToString:@"tel"]) {
-        return YES;
-    }
-
-    return [NSURLConnection canHandleRequest:request];
-}
-
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType
 {
     BOOL shouldLoad = YES;
@@ -215,14 +204,11 @@ static NSString *stripFragment(NSString* url)
     VerboseLog(@"webView shouldLoad=%d (before) state=%d loadCount=%d URL=%@", shouldLoad, _state, _loadCount, request.URL);
 
     if (shouldLoad) {
-        // When devtools refresh occurs, it blindly uses the same request object. If a history.replaceState() has occured, then
-        // mainDocumentURL != URL even though it's a top-level navigation.
-        BOOL isDevToolsRefresh = (request == webView.request);
-        BOOL isTopLevelNavigation = isDevToolsRefresh || [request.URL isEqual:[request mainDocumentURL]];
+        BOOL isTopLevelNavigation = [request.URL isEqual:[request mainDocumentURL]];
         if (isTopLevelNavigation) {
             // Ignore hash changes that don't navigate to a different page.
             // webView.request does actually update when history.replaceState() gets called.
-            if ([self request:request isEqualToRequestAfterStrippingFragments:webView.request]) {
+            if ([self request:request isFragmentIdentifierToRequest:webView.request]) {
                 NSString* prevURL = [self evalForCurrentURL:webView];
                 if ([prevURL isEqualToString:[request.URL absoluteString]]) {
                     VerboseLog(@"Page reload detected.");
@@ -265,7 +251,7 @@ static NSString *stripFragment(NSString* url)
         } else {
             // Deny invalid URLs so that we don't get the case where we go straight from
             // webViewShouldLoad -> webViewDidFailLoad (messes up _loadCount).
-            shouldLoad = shouldLoad && [self shouldLoadRequest:request];
+            shouldLoad = shouldLoad && [NSURLConnection canHandleRequest:request];
         }
         VerboseLog(@"webView shouldLoad=%d (after) isTopLevelNavigation=%d state=%d loadCount=%d", shouldLoad, isTopLevelNavigation, _state, _loadCount);
     }
@@ -373,11 +359,7 @@ static NSString *stripFragment(NSString* url)
             break;
 
         case STATE_WAITING_FOR_LOAD_START:
-            if ([error code] == NSURLErrorCancelled) {
-                _state = STATE_CANCELLED;
-            } else {
-                _state = STATE_IDLE;
-            }
+            _state = STATE_IDLE;
             fireCallback = YES;
             break;
 

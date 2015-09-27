@@ -1,0 +1,157 @@
+/* Empty. Add your own CSS if you like */
+
+/*.title{
+	font-size: 20px !important;
+	font-weight: 700 !important;
+}
+
+.main {
+	background-image:linear-gradient(rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0)),url("http://24.media.tumblr.com/ee1a34558a90bb1d539e531c2167c477/tumblr_n6k4xunTSJ1qlmppmo1_500.jpg");
+	background-size:cover;
+}
+
+.title-header {
+	text-align: center;
+	color: white;
+}
+
+.title-header h4{
+	font-weight: 700;
+	color: white;
+}
+
+.button-wrapper {
+    text-align: center;
+}
+
+.main .item{
+	border-radius: 4px;
+}
+
+.item{
+	border-width: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.button.button-light {
+    border-color: #ddd;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.item-select select{
+	border-width: 0;
+	background-color: rgba(255, 255, 255, 0);
+	color: white;
+}
+
+
+.trip-details h2{
+	color: white !important;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+
+
+.trip-details p{
+	color: white !important;
+}
+
+.item-input p{
+	color: white !important;
+}
+
+input[type="text"]{
+	color: white;
+}
+
+::-webkit-input-placeholder {
+   color: white !important;
+}
+
+:-moz-placeholder { 
+   color: white !important;  
+}
+
+::-moz-placeholder { 
+   color: white !important;  
+}
+
+:-ms-input-placeholder {  
+   color: white !important;  
+}*/
+
+/*body {
+
+  font-family: sans-serif;
+}
+
+.ion-input-select--large,
+.ion-input-select,
+select {
+  -webkit-appearance:none;
+  background-repeat: no-repeat;
+  background-color: rgba(0,0,0,0);  
+  border:thin solid #dddddd;
+  font-weight:300;
+  display:inline;
+  vertical-align:middle;
+  color:#333;
+  padding: auto 0;
+  overflow:hidden;
+  box-sizing:border-box;
+
+}
+
+.ion-input-select--large {
+  width:420px;
+  font-size:1.6rem;
+  background-image: url(http://i.imgur.com/7rGM4IX.png);
+  text-indent:40px;
+  padding:1.2rem 0;
+}
+
+.ion-input-select {
+  width:200px;
+  font-size:1rem;
+  background-image: url(http://i.imgur.com/nA9xx1X.png);
+  text-indent:20px;
+  padding:.5rem 0;
+}
+
+option {
+  background:#444;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+:focus {
+  outline:none;
+}*/
+
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../lib/Comfortaa-Bold.ttf');
+}
+
+.main {
+  background-color: #fcf2ee;
+  font-family: 'Comfortaa';
+}
+
+.button.button-light {
+    border-radius: 50px;
+    border: 3px solid #f5bca8;
+    color: #333;
+    overflow: hidden;
+    background: #fff;
+    padding: 0px 50px;
+}
+
+.cs-select{
+    border: 3px solid #f5bca8;
+    border-radius: 4px;
+  }

@@ -1,43 +1,21 @@
 {
-    "cordova-plugin-console": {
+    "org.apache.cordova.camera": {
         "source": {
-            "type": "registry",
-            "id": "cordova-plugin-console"
-        },
-        "is_top_level": true,
-        "variables": {}
+            "type": "local",
+            "path": "/var/folders/yc/wb4ct6qn5vl2r6hv8k3mck_w0000gq/T/org.apache.cordova.camera/package"
+        }
     },
-    "cordova-plugin-whitelist": {
+    "org.apache.cordova.console": {
         "source": {
-            "type": "registry",
-            "id": "cordova-plugin-whitelist"
-        },
-        "is_top_level": true,
-        "variables": {}
+            "type": "local",
+            "path": "/var/folders/yc/wb4ct6qn5vl2r6hv8k3mck_w0000gq/T/org.apache.cordova.console/package"
+        }
     },
-    "cordova-plugin-device": {
+    "org.apache.cordova.device": {
         "source": {
-            "type": "registry",
-            "id": "cordova-plugin-device"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "ionic-plugin-keyboard": {
-        "source": {
-            "type": "registry",
-            "id": "ionic-plugin-keyboard"
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
-    "cordova-plugin-camera": {
-        "source": {
-            "type": "registry",
-            "id": "cordova-plugin-camera"
-        },
-        "is_top_level": true,
-        "variables": {}
+            "type": "local",
+            "path": "/var/folders/yc/wb4ct6qn5vl2r6hv8k3mck_w0000gq/T/org.apache.cordova.device/package"
+        }
     },
     "cordova-plugin-file-transfer": {
         "source": {
@@ -52,7 +30,7 @@
             "type": "registry",
             "id": "cordova-plugin-file"
         },
-        "is_top_level": true,
+        "is_top_level": false,
         "variables": {}
     }
 }
