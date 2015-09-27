@@ -63,7 +63,7 @@ angular.module('starter', ['ionic', 'starter.services', 'ngCordova'])
   // $scope.upStatus = 'Not uploaded';
 
       // var urlParam = encodeURIComponent(Picture.getURI());
-     var url = "https://api-content.dropbox.com/1/files_put/dropbox/test.jpg?access_token=<INSERT_TO_COIN>";
+     var url = "https://api-content.dropbox.com/1/files_put/dropbox/test.jpg?access_token=<INSERT_TOKEN_HERE>";
       
      //File for Upload
      var targetPath = $scope.lastPhoto;
@@ -110,7 +110,7 @@ angular.module('starter', ['ionic', 'starter.services', 'ngCordova'])
 
      clarifai = new Clarifai(
         {
-            'accessToken': '10s2FxlSy1jIyAImSwM6yBK7VVQGBA'
+            'accessToken': '<INSERT_TOKEN_HERE>'
         }
     );
 
