@@ -63,7 +63,7 @@ angular.module('starter', ['ionic', 'starter.services', 'ngCordova'])
   // $scope.upStatus = 'Not uploaded';
 
       // var urlParam = encodeURIComponent(Picture.getURI());
-     var url = "https://api-content.dropbox.com/1/files_put/dropbox/test.jpg?access_token=EM2qAlZjJ4QAAAAAAAADmp4TjPQqctwqNo9jzuC8Nhe8otxtK-bQDxHk7c-AvG8Z";
+     var url = "https://api-content.dropbox.com/1/files_put/dropbox/test.jpg?access_token=<INSERT_TO_COIN>";
       
      //File for Upload
      var targetPath = $scope.lastPhoto;
